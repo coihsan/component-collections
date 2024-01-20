@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+
 const icons = {
   menu: (
     <svg
@@ -50,33 +51,16 @@ export function Navbar({ className }: Props) {
   );
 }
 
-export default function NavMenu1() {
-  const [navbarOpen, setNavbarOpen] = useState(false);
-  const toggleNavbar = () => {
-    setNavbarOpen(!navbarOpen);
-  };
+export default function NavMenu2() {
   return (
-    <header className="fixed left-0 w-full mx-auto flex items-center justify-between px-10 py-4 bg-stone-50 z-50 shadow-md">
-      <Link className="font-bold" href={"/"}>
-        Logo
-      </Link>
-      <Navbar className="flex items-center max-sm:hidden" />
-      <div className="flex items-center justify-center sm:hidden border border-stone-300 rounded-md p-[3px]">
-        <input
-          className="w-7 h-7 opacity-0 cursor-pointer z-10"
-          aria-checked="false"
-          type="checkbox"
-          name="navbarOpen"
-          id="navbarOpen"
-          onClick={toggleNavbar}
-        />
-        <span className="absolute z-[1]">
-          {navbarOpen ? icons.close : icons.menu}
-        </span>
+    <header className="fixed left-0 mx-auto w-full flex items-center justify-between px-8 py-4">
+      <div className="flex items-center">
+        <Link className="font-bold" href={"/"}>
+          Logo
+        </Link>
+        <Navbar className="ml-4 flex items-center " />
       </div>
-      {navbarOpen && (
-        <Navbar className="max-sm:flex items-start flex-col md:hidden absolute left-0 top-14 z-[-1] bg-stone-50 w-full h-max p-6 py-2" />
-      )}
+      <div>social</div>
     </header>
   );
 }
