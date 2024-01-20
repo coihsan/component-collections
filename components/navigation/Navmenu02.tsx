@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-
+import { sociallink } from "@/app/lib/iconsSocial";
 const icons = {
   menu: (
     <svg
@@ -40,7 +40,7 @@ export function Navbar({ className }: Props) {
     <nav className={className}>
       {navlink.map((link) => (
         <Link
-          className="px-4 py-1 font-semibold hover:scale-[0.95] transition-transform ease-in-out"
+          className="px-4 py-2 hover:bg-stone-200 rounded-lg transition-color ease-in-out"
           key={link.key}
           href={link.href}
         >
@@ -53,14 +53,20 @@ export function Navbar({ className }: Props) {
 
 export default function NavMenu2() {
   return (
-    <header className="fixed left-0 mx-auto w-full flex items-center justify-between px-8 py-4">
+    <header className="fixed left-0 mx-auto w-full flex items-center justify-between gap-2 px-8 py-4 bg-stone-100 shadow-md">
       <div className="flex items-center">
-        <Link className="font-bold" href={"/"}>
+        <Link className="text-2xl font-bold" href={"/"}>
           Logo
         </Link>
         <Navbar className="ml-4 flex items-center " />
       </div>
-      <div>social</div>
+      <div className="flex items-center">
+        {sociallink.map((iconlink) => (
+          <a className="fill-stone-900" key={iconlink.key} href={iconlink.url}>
+            <span className="fill-black">{iconlink.icons}</span>
+          </a>
+        ))}
+      </div>
     </header>
   );
 }
