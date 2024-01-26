@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { sociallink } from "@/app/lib/iconsSocial";
+import { navlink } from "@/app/constants/navlink";
 const icons = {
   menu: (
     <svg
@@ -24,13 +25,6 @@ const icons = {
     </svg>
   ),
 };
-const navlink = [
-  { key: 0, href: "/", text: "Home" },
-  { key: 1, href: "/", text: "Menu" },
-  { key: 2, href: "/", text: "Menu" },
-  { key: 3, href: "/", text: "Menu" },
-  { key: 4, href: "/", text: "Menu" },
-];
 
 interface Props {
   className: string;
@@ -60,10 +54,10 @@ export default function NavMenu2() {
         </Link>
         <Navbar className="ml-4 flex items-center " />
       </div>
-      <div className="flex items-center">
+      <div className="flex items-center gap-3">
         {sociallink.map((iconlink) => (
           <a className="fill-stone-900" key={iconlink.key} href={iconlink.url}>
-            <span className="fill-black">{iconlink.icons}</span>
+            <span className="">{iconlink.icons}</span>
           </a>
         ))}
       </div>

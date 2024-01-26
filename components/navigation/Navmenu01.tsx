@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { navlink } from "@/app/constants/navlink";
 const icons = {
   menu: (
     <svg
@@ -23,13 +24,6 @@ const icons = {
     </svg>
   ),
 };
-const navlink = [
-  { key: 0, href: "/", text: "Home" },
-  { key: 1, href: "/", text: "Menu" },
-  { key: 2, href: "/", text: "Menu" },
-  { key: 3, href: "/", text: "Menu" },
-  { key: 4, href: "/", text: "Menu" },
-];
 
 interface Props {
   className: string;
